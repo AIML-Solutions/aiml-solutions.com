@@ -161,16 +161,16 @@
 
 <header class="fade-in">
   <span class="badge">AIML-Solutions</span>
-  <h1>Agentic AI & ML Systems<br/>Built for Production</h1>
+  <h2>Agentic AI & ML Systems</h2><br/><h3>Built for Production</h3>
   <p class="subhead">
-    I design and ship <strong>AI-first systems</strong> — agentic pipelines, MCP servers,
+    I design and ship <strong>AI-powered systems</strong> — agentic pipelines, MCP servers,
     RAG platforms, and evaluation harnesses — with the rigor of real production infrastructure.
   </p>
 
-  <div class="cta-row">
+  <div class="cta-row">0
     <a class="btn primary" href="https://github.com/AIML-Solutions" target="_blank">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    <a class="btn" href="mailto:contact@aiml-solutions.com">Contact</a>
+    <a class="btn" href="https://www.linkedin.com/in/dtdonaghy" target="_blank">LinkedIn</a>
+    <a class="btn" href="mailto:dennis.donaghy@aiml-solutions.com">Contact</a>
   </div>
 </header>
 
@@ -180,5 +180,44 @@
     <div class="card">
       <h3>Agentic Systems</h3>
       <p>Multi-step AI agents with critique loops, tool use, memory, and orchestration layers.</p>
-      <div class="stack">LangChain · FastMCP · OpenAI ·
+      <div class="stack">LangChain · FastMCP · OpenAI · HF</div>
+    </div>
 
+    <div class="card">
+      <h3>RAG & Retrieval</h3>
+      <p>High-signal retrieval pipelines with structured inputs, embeddings, and traceability.</p>
+      <div class="stack">Vector DBs · RAG · Evaluation</div>
+    </div>
+
+    <div class="card">
+      <h3>MCP Servers</h3>
+      <p>Tool-driven, schema-validated MCP servers in Python and Docker.</p>
+      <div class="stack">FastMCP · Pydantic · AsyncIO</div>
+    </div>
+
+    <div class="card">
+      <h3>AI Infrastructure</h3>
+      <p>Production patterns for AI services: auth, observability, CI, and deployment.</p>
+      <div class="stack">Docker · GitHub Actions · Cloud</div>
+    </div>
+  </div>
+</section>
+
+<section class="fade-in">
+  <h2>Philosophy</h2>
+  <p class="subhead">
+    AI systems should be <strong>inspectable, evaluatable, and safe to iterate</strong>.
+    I focus on architectures that scale with model capability — not brittle demos.
+  </p>
+</section>
+
+<footer>
+  © <span id="year"></span> AIML-Solutions · Built with clarity, not hype.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
