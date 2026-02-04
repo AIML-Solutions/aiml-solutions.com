@@ -176,38 +176,112 @@
 
 <section class="fade-in">
   <h2>What I Build</h2>
+
   <div class="grid">
+
     <div class="card">
       <h3>Agentic Systems</h3>
-      <p>Multi-step AI agents with critique loops, tool use, memory, and orchestration layers.</p>
-      <div class="stack">LangChain · FastMCP · OpenAI · HF</div>
+      <p>
+        Multi-step agents designed for controlled execution rather than open-ended autonomy.
+        I focus on explicit planning phases, critique or self-review loops, bounded tool use,
+        and orchestration layers that make agent behavior inspectable and debuggable.
+      </p>
+      <div class="stack">LangChain · FastMCP · Structured Prompts · Tool Schemas</div>
     </div>
 
     <div class="card">
-      <h3>RAG & Retrieval</h3>
-      <p>High-signal retrieval pipelines with structured inputs, embeddings, and traceability.</p>
-      <div class="stack">Vector DBs · RAG · Evaluation</div>
+      <h3>Retrieval & RAG Pipelines</h3>
+      <p>
+        Retrieval systems optimized for signal, traceability, and evaluation—not just recall.
+        I design pipelines with explicit chunking strategies, metadata propagation, and
+        retrieval diagnostics so failures can be measured and corrected.
+      </p>
+      <div class="stack">Embeddings · Vector Stores · RAG · Offline Evaluation</div>
     </div>
 
     <div class="card">
-      <h3>MCP Servers</h3>
-      <p>Tool-driven, schema-validated MCP servers in Python and Docker.</p>
-      <div class="stack">FastMCP · Pydantic · AsyncIO</div>
+      <h3>MCP Servers & Tooling</h3>
+      <p>
+        Model Context Protocol servers that expose tools as stable, schema-validated interfaces.
+        Emphasis is placed on strict input/output contracts, async safety, and containerized
+        execution so tools remain reliable as models change.
+      </p>
+      <div class="stack">FastMCP · Pydantic · AsyncIO · Docker</div>
     </div>
 
     <div class="card">
-      <h3>AI Infrastructure</h3>
-      <p>Production patterns for AI services: auth, observability, CI, and deployment.</p>
-      <div class="stack">Docker · GitHub Actions · Cloud</div>
+      <h3>Evaluation Harnesses</h3>
+      <p>
+        Lightweight but rigorous evaluation setups for agents, tools, and RAG systems.
+        This includes reproducible runs, structured logs, failure classification, and
+        comparison across model or prompt versions.
+      </p>
+      <div class="stack">JSONL · Deterministic Runs · Failure Taxonomies</div>
     </div>
+
+    <div class="card">
+      <h3>AI Service Architectures</h3>
+      <p>
+        Backend architectures that treat models as components, not magic endpoints.
+        Services are designed with clear boundaries, validated payloads, and minimal
+        coupling between inference, orchestration, and storage layers.
+      </p>
+      <div class="stack">Python APIs · Validation · Service Boundaries</div>
+    </div>
+
+    <div class="card">
+      <h3>Production AI Infrastructure</h3>
+      <p>
+        Infrastructure patterns that support safe iteration in production environments.
+        This includes containerization, CI pipelines, environment isolation, and
+        observability hooks that surface model and system behavior.
+      </p>
+      <div class="stack">Docker · GitHub Actions · CI/CD · Observability</div>
+    </div>
+
+    <div class="card">
+      <h3>Structured Prompting & Control</h3>
+      <p>
+        Prompt designs that favor structure over cleverness.
+        I use explicit formats, role separation, and constraint-driven prompting to
+        reduce ambiguity and make outputs easier to validate programmatically.
+      </p>
+      <div class="stack">Structured I/O · Prompt Versioning · Guardrails</div>
+    </div>
+
+    <div class="card">
+      <h3>Experimental & Research Prototypes</h3>
+      <p>
+        Exploratory systems for testing new agent patterns, orchestration strategies,
+        and evaluation ideas. These are built to be minimal, inspectable, and easy
+        to extend rather than production-polished.
+      </p>
+      <div class="stack">Rapid Prototyping · Reproducibility · Benchmarks</div>
+    </div>
+
   </div>
 </section>
-
+  
 <section class="fade-in">
-  <h2>Philosophy</h2>
+  <h2>Mission</h2>
   <p class="subhead">
-    AI systems should be <strong>inspectable, evaluatable, and safe to iterate</strong>.
-    I focus on solid and reliable architectures that scale well with model capability.
+    My work focuses on building AI systems that are <strong>observable, testable, and safe to evolve</strong>.
+    I design architectures where model behavior can be inspected, evaluated, and improved without relying
+    on opaque prompts or fragile glue code.
+  </p>
+  <p>
+    Across my repositories, I emphasize clear service boundaries, structured inputs and outputs, and
+    repeatable execution paths—whether the system is an agent, an API, or an evaluation harness.
+    The goal is not novelty, but reliability: systems that remain understandable as models grow more capable.
+  </p>
+  <p>
+    I prioritize workflows that support iteration under uncertainty—versioned prompts, explicit tool
+    contracts, reproducible runs, and instrumentation that makes failures diagnosable rather than mysterious.
+    This allows experimentation to happen safely, without sacrificing correctness or control.
+  </p>
+  <p>
+    Ultimately, my mission is to make advanced AI systems easier to reason about, easier to test, and
+    harder to misuse—so they can be deployed responsibly in real environments, not just demos.
   </p>
 </section>
 
