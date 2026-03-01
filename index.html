@@ -197,6 +197,7 @@
       .section p {
         margin: 0 0 14px;
         color: #bfd1f5;
+        max-width: 76ch;
       }
 
       .storyline-quote {
@@ -239,6 +240,11 @@
         padding-left: 18px;
         color: var(--muted);
         line-height: 1.5;
+      }
+
+      .list li {
+        margin-bottom: 6px;
+        max-width: 42ch;
       }
 
       .repo-grid {
@@ -411,33 +417,42 @@
       </section>
 
       <section class="section" id="departments">
-        <h2>Department-led execution model</h2>
+        <h2>MultiClawOS</h2>
         <p>
-          MultiClaw separates responsibilities into specialized departments with narrow scopes and clear interfaces.
+          Public-facing execution lanes inside AIML Solutions.
+          Built for reliability, observability, and fast iteration.
         </p>
         <div class="cards">
           <article class="card">
+            <h3>IntelliClaw</h3>
+            <ul class="list">
+              <li>Live intelligence ingestion and scoring</li>
+              <li>Cross-source validation and alert routing</li>
+              <li>Operational minutes and signal summaries</li>
+            </ul>
+          </article>
+          <article class="card">
             <h3>Quant Engineering</h3>
             <ul class="list">
-              <li>LEAN-based backtesting and market data orchestration</li>
-              <li>Options, futures, and greeks-aware analytics</li>
+              <li>LEAN backtesting and data orchestration</li>
+              <li>Options, futures, and greeks analytics</li>
               <li>Pipeline validation and reproducible ETL</li>
             </ul>
           </article>
           <article class="card">
-            <h3>LLM + ModelOps</h3>
+            <h3>ModelOps</h3>
             <ul class="list">
               <li>Model routing and benchmark governance</li>
-              <li>MLflow experiment tracking and lifecycle control</li>
-              <li>Cost-aware default/fallback model policies</li>
+              <li>MLflow test tracking and lifecycle control</li>
+              <li>Cost-aware default and fallback policies</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Blockchain + Frontend</h3>
+            <h3>Blockchain + Interfaces</h3>
             <ul class="list">
-              <li>Token flow tracing and smart contract testing</li>
-              <li>Next.js + Plotly dashboards for decision support</li>
-              <li>Operational playbooks through Public Library docs</li>
+              <li>Token flow tracing and contract testing</li>
+              <li>GraphQL surfaces and operator dashboards</li>
+              <li>Public docs and execution playbooks</li>
             </ul>
           </article>
         </div>
