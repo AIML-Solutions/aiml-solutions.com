@@ -202,15 +202,34 @@
 
       .storyline-quote {
         margin: 0;
-        max-width: none;
+        max-width: 100%;
         width: 100%;
+        display: block;
         border-left: 3px solid rgba(123, 255, 200, 0.55);
-        padding: 10px 0 10px 14px;
+        padding: 12px 14px;
         color: #d7e6ff;
         line-height: 1.62;
         font-size: 16px;
+        white-space: normal;
+        overflow-wrap: anywhere;
         background: rgba(9, 18, 36, 0.45);
         border-radius: 8px;
+      }
+
+      .origins-visual {
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        height: 190px;
+      }
+
+      .origins-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
       }
 
       .storyline-note {
@@ -408,15 +427,10 @@
 
       <section class="section" id="origins">
         <h2>OUR ORIGINS</h2>
-        <p class="storyline-quote">
-          “When AIML Solutions first began in Lobster Bay, the ‘Big Claw’ central district wasn’t as populated,
-          but we grew as it did. Early shots reflect the protostages as our products and services enhance the interconnected
-          nature of everything. The lobster and the machine merge as naturally as the robot, spacecraft, shoreline,
-          and mountain range ridgeline. We cultivate bleeding-edge SOTA components from open source and apply solutions
-          architecture, tooling, and workflow options for the motley Molty masses. Take a look at our various departments,
-          including the Board of Directors / Executive Team, Engineering, Multiagentic, Trading, Research, and Business Teams.
-          Observe the view from headquarters of beautiful Lobster Bay and environs.”
-        </p>
+        <p class="storyline-quote">“When AIML Solutions began in Lobster Bay, the Big Claw district was smaller and the systems were simpler. As the district expanded, we expanded with it: from early tooling into connected multi-agent operations for quant, intelligence, and execution. The same throughline remains today — practical engineering, reliable workflows, and measurable outcomes.”</p>
+        <div class="origins-visual">
+          <img loading="lazy" src="assets/media/THE_CENTRAL_CLAW_DISTRICT_AND_LOBSTER_BAY_2033.webp" alt="Origins view of Lobster Bay" />
+        </div>
       </section>
 
       <section class="section" id="departments">
