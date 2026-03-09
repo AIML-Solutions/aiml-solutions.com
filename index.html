@@ -200,6 +200,13 @@
         max-width: 76ch;
       }
 
+      .origins-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 12px;
+        align-items: stretch;
+      }
+
       .storyline-quote {
         margin: 0;
         max-width: 100%;
@@ -213,13 +220,13 @@
         white-space: normal;
         overflow-wrap: break-word;
         word-break: normal;
-        text-wrap: pretty;
+        text-wrap: wrap;
         background: rgba(9, 18, 36, 0.45);
         border-radius: 8px;
       }
 
       .origins-visual {
-        margin-top: 12px;
+        margin-top: 0;
         border: 1px solid var(--line);
         border-radius: 10px;
         overflow: hidden;
@@ -358,8 +365,13 @@
         .cards,
         .repo-grid,
         .gallery,
-        .crop-strip {
+        .crop-strip,
+        .origins-layout {
           grid-template-columns: 1fr;
+        }
+
+        .origins-visual {
+          height: 190px;
         }
 
         .nav { align-items: flex-start; }
@@ -395,9 +407,9 @@
             <span class="badge">🦞 MultiClawOS operating model</span>
             <span class="badge">IntelliClaw live signal lane</span>
             <span class="badge">LEAN + options/greeks</span>
-            <span class="badge">PostgreSQL + Hasura GraphQL + MCP</span>
-            <span class="badge">Alpaca + Tradier integration</span>
-            <span class="badge">Crypto + on-chain analytics lanes</span>
+            <span class="badge">PostgreSQL + Hasura + MCP</span>
+            <span class="badge">Broker integration lanes</span>
+            <span class="badge">On-chain analytics</span>
           </div>
 
           <div class="cta">
@@ -409,7 +421,7 @@
           <div class="stats">
             <div class="stat"><b>20</b><span>repos in AIML-Solutions GitHub org</span></div>
             <div class="stat"><b>14</b><span>public repos currently live</span></div>
-            <div class="stat"><b>6</b><span>active data lanes (equities, options, crypto, broker state)</span></div>
+            <div class="stat"><b>6</b><span>active data lanes and state views</span></div>
             <div class="stat"><b>1</b><span>mission: real USD outcomes</span></div>
           </div>
         </div>
@@ -428,9 +440,11 @@
 
       <section class="section" id="origins">
         <h2>OUR ORIGINS</h2>
-        <p class="storyline-quote">“When AIML Solutions began in Lobster Bay, the Big Claw district was smaller and the systems were simpler. As the district expanded, we expanded with it: from early tooling into connected multi-agent operations for quant, intelligence, and execution. The same throughline remains today — practical engineering, reliable workflows, and measurable outcomes.”</p>
-        <div class="origins-visual">
-          <img loading="lazy" src="assets/media/THE_CENTRAL_CLAW_DISTRICT_AND_LOBSTER_BAY_2033.webp" alt="Origins view of Lobster Bay" />
+        <div class="origins-layout">
+          <p class="storyline-quote">“When AIML Solutions began in Lobster Bay, the Big Claw district was smaller and the systems were simpler. As the district expanded, we expanded with it: from early tooling into connected multi-agent operations for quant, intelligence, and execution. The same throughline remains today — practical engineering, reliable workflows, and measurable outcomes.”</p>
+          <div class="origins-visual">
+            <img loading="lazy" src="assets/media/THE_CENTRAL_CLAW_DISTRICT_AND_LOBSTER_BAY_2033.webp" alt="Origins view of Lobster Bay" />
+          </div>
         </div>
       </section>
 
@@ -485,7 +499,7 @@
             <h3>Security + Reliability</h3>
             <ul class="list">
               <li>Identity integrity checks and audit logs</li>
-              <li>Ingestion and broker anomaly monitoring</li>
+              <li>Ingestion and execution monitoring</li>
               <li>Staged hardening with rollback awareness</li>
             </ul>
           </article>
@@ -502,43 +516,43 @@
           <article class="card">
             <h3>GetMultiClaw</h3>
             <ul class="list">
-              <li>Umbrella operations and system governance</li>
-              <li>Cross-lane coordination standards</li>
+              <li>Ops governance</li>
+              <li>Lane coordination</li>
             </ul>
           </article>
           <article class="card">
             <h3>GetUnified</h3>
             <ul class="list">
-              <li>Shared schema contracts and event models</li>
-              <li>Validation alignment across data lanes</li>
+              <li>Shared schemas</li>
+              <li>Data validation</li>
             </ul>
           </article>
           <article class="card">
             <h3>GetFocused</h3>
             <ul class="list">
-              <li>Targeted crypto and chain-tracing workflows</li>
-              <li>Focused investigation lanes for digital assets</li>
+              <li>Chain tracing</li>
+              <li>Asset investigations</li>
             </ul>
           </article>
           <article class="card">
             <h3>GetAware</h3>
             <ul class="list">
-              <li>Operational status snapshots and checks</li>
-              <li>Visibility into runtime system health</li>
+              <li>Status checks</li>
+              <li>Runtime health</li>
             </ul>
           </article>
           <article class="card">
             <h3>GetIntel</h3>
             <ul class="list">
-              <li>Intelligence collection and enrichment</li>
-              <li>Cross-source context for scoring decisions</li>
+              <li>Intel collection</li>
+              <li>Scoring context</li>
             </ul>
           </article>
           <article class="card">
             <h3>GetTorn</h3>
             <ul class="list">
-              <li>Agent-browser teardown and system analysis</li>
-              <li>Grounded reverse-engineering playbooks</li>
+              <li>Browser teardown</li>
+              <li>Reverse engineering</li>
             </ul>
           </article>
         </div>
@@ -591,49 +605,49 @@
           <article class="card">
             <h3>Data Fabric</h3>
             <ul class="list">
-              <li>PostgreSQL as canonical event and run store</li>
-              <li>Hasura GraphQL for unified query access</li>
-              <li>Schema validation and anomaly monitoring views</li>
+              <li>PostgreSQL run store</li>
+              <li>Hasura query layer</li>
+              <li>Validation views</li>
             </ul>
           </article>
           <article class="card">
             <h3>Agentic Runtime</h3>
             <ul class="list">
-              <li>OpenClaw orchestration with role-scoped tools</li>
-              <li>ClawHub and custom skills for modular growth</li>
-              <li>Identity and memory layers for continuity</li>
+              <li>Role-scoped orchestration</li>
+              <li>Modular skill growth</li>
+              <li>Identity continuity</li>
             </ul>
           </article>
           <article class="card">
             <h3>Market Lanes</h3>
             <ul class="list">
-              <li>LEAN backtesting with automated result ingestion</li>
-              <li>Broker state lanes: Alpaca and Tradier</li>
-              <li>Equities, options greeks, and crypto snapshots</li>
+              <li>LEAN result ingestion</li>
+              <li>Broker state monitoring</li>
+              <li>Cross-market snapshots</li>
             </ul>
           </article>
           <article class="card">
             <h3>Security Stance</h3>
             <ul class="list">
-              <li>Identity integrity checks and audit discipline</li>
-              <li>Staged hardening and reduced attack surface</li>
-              <li>Security-first feedback loop in active use</li>
+              <li>Identity audit checks</li>
+              <li>Staged hardening</li>
+              <li>Security feedback loop</li>
             </ul>
           </article>
           <article class="card">
             <h3>Execution Interfaces</h3>
             <ul class="list">
-              <li>Operator-first dashboards and workflow surfaces</li>
-              <li>Responsive web interfaces for client visibility</li>
-              <li>Decision support views for fast interventions</li>
+              <li>Operator dashboards</li>
+              <li>Client web visibility</li>
+              <li>Decision support views</li>
             </ul>
           </article>
           <article class="card">
             <h3>Business Delivery Layer</h3>
             <ul class="list">
-              <li>Client onboarding, scope, and milestone governance</li>
-              <li>Outcome tracking against value and ROI targets</li>
-              <li>Reputation-first delivery standards in each lane</li>
+              <li>Onboarding and scope control</li>
+              <li>Outcome tracking</li>
+              <li>Delivery standards</li>
             </ul>
           </article>
         </div>
