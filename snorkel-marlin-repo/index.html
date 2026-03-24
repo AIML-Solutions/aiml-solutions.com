@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snorkel Marlin Repo Review | AIML Solutions</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111831;
+      --card: #172142;
+      --text: #eaf0ff;
+      --muted: #95a3cb;
+      --accent: #7aa2ff;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #0a0f1d 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid #253259;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 10px; font-size: 1.5rem; }
+    h2 { margin: 0 0 10px; font-size: 1.1rem; }
+    .muted { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #293867;
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .chip {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid #3b4f86;
+      color: #c8d7ff;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    details {
+      background: var(--panel);
+      border: 1px solid #253259;
+      border-radius: 12px;
+      margin: 10px 0;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #d6e2ff;
+    }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #0d1430;
+      border: 1px solid #2a3968;
+      border-radius: 10px;
+      padding: 12px;
+      overflow: auto;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1f2c56;
+      color: #fff;
+      border: 1px solid #3c5395;
+      border-radius: 10px;
+      padding: 9px 12px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+    .btn:hover { background: #25356a; }
+    .ok { color: var(--ok); font-weight: 600; }
+    .warn { color: var(--warn); font-weight: 600; }
+    .footer {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Snorkel Marlin Repo Review</h1>
+      <p class="muted">
+        Review page for the OpenAI Python domain-filtering assessment output.
+        Kept off homepage navigation for low visibility.
+      </p>
+      <span class="chip">Page: /snorkel-marlin-repo/</span>
+      <span class="chip">Visibility: Direct URL only</span>
+      <span class="chip">Interactive: Yes</span>
+      <div>
+        <button class="btn" id="copyUrl">Copy this page URL</button>
+        <button class="btn" id="expandAll">Expand all sections</button>
+        <button class="btn" id="collapseAll">Collapse all sections</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Assessment Status</h2>
+        <p><span class="warn">Needs correction before merge</span></p>
+        <ul>
+          <li>Core feature idea implemented, but test execution was incomplete.</li>
+          <li>Dependency issues blocked validation of existing test suite.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Public Notes</h2>
+        <p class="muted">This page contains non-sensitive review notes only.</p>
+        <p>For sensitive details, use your private page URL (separate route).</p>
+      </article>
+      <article class="card">
+        <h2>Interactivity</h2>
+        <ul>
+          <li>Expandable sections</li>
+          <li>One-click copy for next-turn prompt</li>
+          <li>Copy URL helper</li>
+        </ul>
+      </article>
+    </section>
+
+    <details>
+      <summary>Blockers found in model output</summary>
+      <ul>
+        <li>Did not successfully run full pytest suite or prove existing tests still pass.</li>
+        <li>Environment/dependency setup remained broken (e.g., pytest_asyncio mismatch, missing test deps).</li>
+        <li>Used ad-hoc script checks instead of proper project test execution.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>What was good</summary>
+      <ul>
+        <li>Targeted the right response tool type files.</li>
+        <li>Added include/exclude domain concepts with wildcard support.</li>
+        <li>Added tests with solid case coverage for filtering logic.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Recommended next-turn prompt</summary>
+      <pre id="nextPrompt">Your implementation direction is good, but the PR is not mergeable yet because test validation is incomplete.
+
+Please fix this by:
+1) Resolving the project test environment correctly using the repo’s actual dev dependency constraints.
+2) Running the relevant pytest suite (including existing tests and your new tests).
+3) Ensuring all tests pass and reporting the exact commands used.
+4) Keeping changes minimal and aligned with generated type patterns.
+5) Returning output in the exact required format only (no extra narration).
+
+If your current approach introduces non-generated helper modules that don’t match this SDK’s generation patterns, revise to keep the implementation in the schema/types layer only.
+</pre>
+      <button class="btn" id="copyPrompt">Copy next-turn prompt</button>
+    </details>
+
+    <div class="footer">
+      <p>Maintained for review workflow on aiml-solutions.com. Last updated: <span id="stamp"></span> UTC</p>
+    </div>
+  </main>
+
+  <script>
+    const allDetails = () => Array.from(document.querySelectorAll('details'));
+    document.getElementById('expandAll').addEventListener('click', () => allDetails().forEach(d => d.open = true));
+    document.getElementById('collapseAll').addEventListener('click', () => allDetails().forEach(d => d.open = false));
+
+    document.getElementById('copyPrompt').addEventListener('click', async () => {
+      const text = document.getElementById('nextPrompt').textContent;
+      await navigator.clipboard.writeText(text);
+      alert('Next-turn prompt copied.');
+    });
+
+    document.getElementById('copyUrl').addEventListener('click', async () => {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('URL copied.');
+    });
+
+    document.getElementById('stamp').textContent = new Date().toISOString().replace('T', ' ').slice(0, 16);
+  </script>
+</body>
+</html>
