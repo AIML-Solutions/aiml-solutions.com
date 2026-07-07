@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /secure/
-Disallow: /snorkel-marlin-repo/
+Allow: /
