@@ -111,6 +111,9 @@
       .note { color: var(--warn); font-size: 13px; }
       .repo { transition: border-color 0.15s ease, transform 0.15s ease; }
       .repo:hover { transform: translateY(-1px); }
+      .update-layout { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(320px, 504px); gap: 16px; align-items: start; }
+      .linkedin-embed { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: rgba(255, 255, 255, 0.96); box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22); }
+      .linkedin-embed iframe { display: block; width: 100%; height: min(72vh, 820px); border: 0; }
 
       .process { counter-reset: step; display: grid; gap: 10px; }
       .step { counter-increment: step; border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; background: rgba(8, 15, 29, 0.74); color: var(--soft); }
@@ -118,9 +121,10 @@
 
       footer { margin-top: 20px; color: var(--muted); text-align: center; font-size: 13px; }
       @media (max-width: 920px) {
-        .hero, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+        .hero, .grid-2, .grid-3, .grid-4, .update-layout { grid-template-columns: 1fr; }
         .nav { align-items: flex-start; flex-direction: column; }
         .hero-main { padding: 24px; }
+        .linkedin-embed iframe { height: 680px; }
       }
     </style>
   </head>
@@ -132,6 +136,7 @@
           <a href="#services">Services</a>
           <a href="#os">MultiClaw OS</a>
           <a href="#proof">Proof</a>
+          <a href="#latest">Latest</a>
           <a href="#evaluation">Evaluation</a>
           <a href="#projects">Projects</a>
           <a href="#credentials">Credentials</a>
@@ -180,6 +185,19 @@
           <div class="metric"><b>7</b><span>AI harness artifact templates in AgentTools</span></div>
         </div>
         <div class="cta"><a class="btn" href="https://github.com/AIML-Solutions/MultiClaw/blob/main/docs/RUNTIME-AUDIT-SAMPLE.md" target="_blank" rel="noreferrer">Sample Runtime Audit</a><a class="btn" href="https://github.com/AIML-Solutions/MultiClaw/blob/main/docs/FLEET-CASE-STUDY.md" target="_blank" rel="noreferrer">Fleet Case Study</a><a class="btn" href="https://github.com/AIML-Solutions/AgentTools/tree/main/skills/harness-audit" target="_blank" rel="noreferrer">Harness Audit CLI</a><a class="btn" href="https://github.com/AIML-Solutions/IntelliClaw/tree/master/examples/demo-output" target="_blank" rel="noreferrer">IntelliClaw Demo</a></div>
+      </section>
+
+      <section class="section" id="latest">
+        <div class="section-head"><h2>Latest Field Note</h2><a class="btn" href="https://www.linkedin.com/in/dtdonaghy" target="_blank" rel="noreferrer">Follow on LinkedIn</a></div>
+        <div class="update-layout">
+          <div>
+            <p>A current public update from AIML Solutions. The work here is intentionally practical: applied AI/ML systems, runtime discipline, retrieval, evaluation, and public-safe proof artifacts.</p>
+            <p class="note">Embedded LinkedIn content may load more slowly or be blocked by some privacy settings. The rest of the site remains usable without it.</p>
+          </div>
+          <div class="linkedin-embed" aria-label="Latest AIML Solutions LinkedIn update">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7485401414547025920" allowfullscreen="" title="Embedded LinkedIn post"></iframe>
+          </div>
+        </div>
       </section>
 
       <section class="section" id="services">
