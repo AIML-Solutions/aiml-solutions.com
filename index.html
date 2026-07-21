@@ -111,6 +111,7 @@
       .repo { transition: border-color 0.15s ease, transform 0.15s ease; }
       .repo:hover { transform: translateY(-1px); }
       .mission-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr); gap: 14px; align-items: stretch; }
+      .mission-intro { max-width: none; }
       .mission-stack { display: grid; gap: 12px; }
       .mission-feature { overflow: hidden; padding: 0; display: flex; flex-direction: column; }
       .mission-feature .visual { min-height: 155px; background: linear-gradient(to top, rgba(5, 9, 18, 0.82), rgba(5, 9, 18, 0.1)), url("assets/media/AIML_SOLUTIONS_MULTIAGENTIC_AI_DESIGN_AND_DEVELOPMENT.webp") center / cover; }
@@ -173,7 +174,7 @@
 
       <section class="section" id="mission">
         <div class="section-head"><h2>Mission</h2></div>
-        <p>AIML Solutions helps teams make agentic AI workflows safer, more reproducible, and easier to operate, with a focus on scoped runtimes, evidence artifacts, evaluation environments, and validation-first data systems.</p>
+        <p class="mission-intro">AIML Solutions helps teams make agentic AI workflows safer, more reproducible, and easier to operate, with a focus on scoped runtimes, evidence artifacts, evaluation environments, and validation-first data systems.</p>
         <div class="mission-layout">
           <div class="mission-stack">
             <article class="card"><h3>Start Practical</h3><p>Begin with a rescue call or small audit before committing to a larger rollout.</p></article>
