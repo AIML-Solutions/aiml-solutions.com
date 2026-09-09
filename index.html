@@ -9,7 +9,7 @@
     <meta property="og:description" content="Production-grade evaluation harnesses, managed agent runtimes, retrieval-quality benchmarks, and operational playbooks for measurable AI workflows." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aiml-solutions.com" />
-    <meta property="og:image" content="https://aiml-solutions.com/assets/media/AIML_SOLUTIONS_MULTIAGENTIC_AI_DESIGN_AND_DEVELOPMENT.webp" />
+    <meta property="og:image" content="https://aiml-solutions.com/assets/media/triage-mesh-jaeger-trace.png" />
     <style>
       :root {
         --bg: #07101f;
@@ -104,6 +104,7 @@
       .card p, .repo small { color: var(--muted); margin: 0; line-height: 1.52; }
       .card ul { margin: 10px 0 0; padding-left: 18px; color: var(--soft); line-height: 1.48; }
       .card li { margin-bottom: 6px; }
+      .metric { display: block; transition: border-color 0.15s ease; }
       .metric b { display: block; font-size: 30px; letter-spacing: -0.8px; }
       .metric span { color: var(--muted); font-size: 13px; line-height: 1.4; }
       .pill { display: inline-block; margin-bottom: 9px; color: var(--accent-2); font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -123,6 +124,12 @@
       .step { counter-increment: step; border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; background: rgba(8, 15, 29, 0.74); color: var(--soft); }
       .step::before { content: counter(step); display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 8px; border-radius: 999px; background: rgba(101, 216, 255, 0.18); color: #fff; font-weight: 800; }
 
+      .figure { display: flex; flex-direction: column; gap: 8px; }
+      .figure img, .figure object { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); background: #0b1526; }
+      .figcap { color: var(--muted); font-size: 13px; line-height: 1.45; }
+      .figcap b { color: #fff; }
+      .hire { margin-top: 12px; color: var(--muted); font-size: 13px; }
+      .hire a { color: var(--accent); font-weight: 700; }
       footer { margin-top: 20px; color: var(--muted); text-align: center; font-size: 13px; }
       @media (max-width: 920px) {
         .hero, .grid-2, .grid-3, .grid-4, .mission-layout { grid-template-columns: 1fr; }
@@ -164,6 +171,7 @@
             <a class="btn" href="#proof">Review Proof</a>
             <a class="btn" href="mailto:dennis.donaghy@aiml-solutions.com?subject=Agentic%20AI%20runtime%20or%20harness%20project">Discuss a Project</a>
           </div>
+          <p class="hire">Hiring rather than buying? The operator's <a href="resume.html">resume</a> and <a href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">public code</a> are one click away.</p>
         </div>
         <aside class="hero-card">
           <div><span class="pill">Latest field note</span><p>A current public update from AIML Solutions on applied AI/ML systems, runtime discipline, retrieval, evaluation, and public-safe proof artifacts.</p></div>
@@ -191,12 +199,26 @@
       <section class="section" id="proof">
         <div class="section-head"><h2>Credibility And Current Proof</h2></div>
         <div class="grid-4">
-          <div class="metric"><b>12/12</b><span>triage-mesh red-team attack scenarios blocked — the suite must fail closed for CI to pass, on every push</span></div>
-          <div class="metric"><b>13/13</b><span>Kubernetes conformance checks passing: Calico-enforced NetworkPolicies plus a full pipeline run on live advisory data</span></div>
-          <div class="metric"><b>16</b><span>MultiClaw Harness synthetic trajectory, agentic-security, and trustworthy-AI cases passing locally</span></div>
-          <div class="metric"><b>17</b><span>RecallOps tests passing across retrieval, API, evaluation, and smoke paths</span></div>
+          <a class="metric" href="https://github.com/AIML-Solutions/triage-mesh/blob/master/tests/redteam/test_attacks.py" target="_blank" rel="noreferrer"><b>12/12</b><span>triage-mesh red-team attack scenarios blocked — the suite must fail closed for CI to pass, on every push. Click to read the attacks.</span></a>
+          <a class="metric" href="https://github.com/AIML-Solutions/triage-mesh/blob/master/scripts/cluster-conformance.sh" target="_blank" rel="noreferrer"><b>13/13</b><span>Kubernetes conformance checks: Calico-enforced NetworkPolicies plus a full pipeline run on live advisory data. Click for the script.</span></a>
+          <a class="metric" href="https://github.com/AIML-Solutions/multiclaw-harness/tree/main/tests" target="_blank" rel="noreferrer"><b>16</b><span>MultiClaw Harness synthetic trajectory, agentic-security, and trustworthy-AI cases passing. Click for the tests.</span></a>
+          <a class="metric" href="https://github.com/AIML-Solutions/recallops/tree/main/tests" target="_blank" rel="noreferrer"><b>17</b><span>RecallOps tests across retrieval, API, evaluation, and smoke paths. Click for the tests.</span></a>
         </div>
-        <div class="cta"><a class="btn primary" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer">triage-mesh Flagship</a><a class="btn" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer">MultiClaw Harness</a><a class="btn" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer">RecallOps Retrieval</a><a class="btn" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">All Public Repos</a></div>
+        <div class="cta"><a class="btn primary" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer">triage-mesh Flagship</a><a class="btn" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer">MultiClaw Harness</a><a class="btn" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer">RecallOps Retrieval</a><a class="btn" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">All Public Repos</a><a class="btn" href="https://github.com/AIML-Solutions/triage-mesh/actions" target="_blank" rel="noreferrer">Live CI Runs</a></div>
+        <div class="grid-2" style="margin-top:14px">
+          <figure class="figure" style="margin:0">
+            <img src="assets/media/triage-mesh-demo.gif" alt="Terminal recording: triage-mesh assesses the seed repository, finds 46 live advisories, and stops at the human approval prompt" loading="lazy" />
+            <figcaption class="figcap"><b>One command, real data.</b> <code>./demo/run-demo.sh</code> builds seven containers, pulls 46 live advisories from OSV.dev for the seed repo, and halts at the human gate. Zero token spend by default.</figcaption>
+          </figure>
+          <figure class="figure" style="margin:0">
+            <img src="assets/media/triage-mesh-jaeger-trace.png" alt="Jaeger UI showing one distributed trace spanning 7 services with 443 spans" loading="lazy" />
+            <figcaption class="figcap"><b>One assessment, one trace.</b> Jaeger showing a single distributed trace across all 7 services — 443 spans, depth 16 — from the orchestrator's request down to each policied tool call and OSV query.</figcaption>
+          </figure>
+        </div>
+        <figure class="figure" style="margin:14px 0 0">
+          <img src="assets/media/triage-mesh-architecture.svg" alt="triage-mesh architecture diagram: orchestrator, three A2A agents, three MCP servers, human gate, OSV egress, and the network-policy boundary" />
+          <figcaption class="figcap"><b>The boundary rule, drawn.</b> A2A between orchestrator and agents; MCP from each agent to exactly one tool server; a single internet egress; the same policy file driving the harness, the compose networks, and the generated Kubernetes NetworkPolicies.</figcaption>
+        </figure>
       </section>
 
       <section class="section" id="build">

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" width="1100" height="430" role="img" aria-label="triage-mesh architecture: orchestrator delegates over A2A to scanner, intel, and assessor agents; each agent reaches its own MCP server; only vuln-intel has internet egress; human approval gates publication">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#aebfdb"/>
+    </marker>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#88f5c8"/>
+    </marker>
+    <style>
+      .box { fill:#101d33; stroke:rgba(143,176,226,.45); stroke-width:1.2; rx:12; }
+      .agent { fill:#12233f; stroke:#65d8ff; stroke-width:1.4; }
+      .mcp { fill:#0d1a2e; stroke:#88f5c8; stroke-width:1.4; }
+      .ext { fill:#1a1f2e; stroke:#ffd37a; stroke-width:1.2; stroke-dasharray:5 4; }
+      .t { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill:#eef5ff; font-size:15px; font-weight:700; }
+      .s { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill:#aebfdb; font-size:11.5px; }
+      .lbl { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill:#88f5c8; font-size:11px; font-weight:800; letter-spacing:.8px; }
+      .lbl2 { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill:#65d8ff; font-size:11px; font-weight:800; letter-spacing:.8px; }
+      .warn { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill:#ffd37a; font-size:11px; font-weight:700; }
+      .edge { stroke:#aebfdb; stroke-width:1.5; fill:none; marker-end:url(#arr); }
+      .edge2 { stroke:#88f5c8; stroke-width:1.5; fill:none; marker-end:url(#arr2); }
+      .zone { fill:none; stroke:rgba(255,211,122,.55); stroke-width:1.2; stroke-dasharray:7 5; rx:16; }
+    </style>
+  </defs>
+
+  <!-- cluster boundary -->
+  <rect class="zone" x="20" y="18" width="880" height="394" rx="16"/>
+  <text class="warn" x="34" y="38">default-deny NetworkPolicies · generated from deploy/policies.yaml · enforced by Calico</text>
+
+  <!-- human / user -->
+  <rect class="box" x="40" y="60" width="150" height="58" rx="12"/>
+  <text class="t" x="115" y="85" text-anchor="middle">User / CI</text>
+  <text class="s" x="115" y="104" text-anchor="middle">POST /assessments</text>
+
+  <!-- orchestrator -->
+  <rect class="agent" x="300" y="60" width="300" height="58" rx="12"/>
+  <text class="t" x="450" y="85" text-anchor="middle">Orchestrator</text>
+  <text class="s" x="450" y="104" text-anchor="middle">FastAPI · A2A client · the only publish path</text>
+
+  <!-- human gate -->
+  <rect class="ext" x="700" y="60" width="180" height="58" rx="12"/>
+  <text class="t" x="790" y="85" text-anchor="middle">Human approval</text>
+  <text class="s" x="790" y="104" text-anchor="middle">nothing publishes without it</text>
+
+  <path class="edge" d="M190,89 L298,89"/>
+  <path class="edge" d="M600,89 L698,89"/>
+  <text class="s" x="649" y="80" text-anchor="middle">gate</text>
+
+  <!-- A2A arrows -->
+  <path class="edge" d="M380,118 L215,178"/>
+  <path class="edge" d="M450,118 L450,178"/>
+  <path class="edge" d="M520,118 L685,178"/>
+  <text class="lbl2" x="290" y="150">A2A · JWT aud=agent</text>
+  <text class="lbl2" x="458" y="150">A2A</text>
+  <text class="lbl2" x="560" y="150">A2A · deadlines</text>
+
+  <!-- agents -->
+  <rect class="agent" x="120" y="180" width="190" height="62" rx="12"/>
+  <text class="t" x="215" y="205" text-anchor="middle">Scanner agent</text>
+  <text class="s" x="215" y="224" text-anchor="middle">policy engine · trust labels</text>
+
+  <rect class="agent" x="355" y="180" width="190" height="62" rx="12"/>
+  <text class="t" x="450" y="205" text-anchor="middle">Intel agent</text>
+  <text class="s" x="450" y="224" text-anchor="middle">policy engine · trust labels</text>
+
+  <rect class="agent" x="590" y="180" width="190" height="62" rx="12"/>
+  <text class="t" x="685" y="205" text-anchor="middle">Assessor agent</text>
+  <text class="s" x="685" y="224" text-anchor="middle">plan-then-execute · narrative only</text>
+
+  <!-- MCP arrows -->
+  <path class="edge2" d="M215,242 L215,300"/>
+  <path class="edge2" d="M450,242 L450,300"/>
+  <path class="edge2" d="M685,242 L685,300"/>
+  <text class="lbl" x="222" y="276">MCP · stateless</text>
+  <text class="lbl" x="457" y="276">MCP · stateless</text>
+  <text class="lbl" x="692" y="276">MCP · stateless</text>
+
+  <!-- MCP servers -->
+  <rect class="mcp" x="120" y="302" width="190" height="62" rx="12"/>
+  <text class="t" x="215" y="327" text-anchor="middle">repo-reader</text>
+  <text class="s" x="215" y="346" text-anchor="middle">manifest files, read-only</text>
+
+  <rect class="mcp" x="355" y="302" width="190" height="62" rx="12"/>
+  <text class="t" x="450" y="327" text-anchor="middle">vuln-intel</text>
+  <text class="s" x="450" y="346" text-anchor="middle">coordinate-only egress</text>
+
+  <rect class="mcp" x="590" y="302" width="190" height="62" rx="12"/>
+  <text class="t" x="685" y="327" text-anchor="middle">report-writer</text>
+  <text class="s" x="685" y="346" text-anchor="middle">staging only · forces PENDING</text>
+
+  <!-- blocked cross-paths -->
+  <text class="warn" x="40" y="404">agent → any other tool server: blocked (harness policy + JWT audience + NetworkPolicy)</text>
+
+  <!-- external OSV -->
+  <rect class="ext" x="930" y="372" width="150" height="56" rx="12"/>
+  <text class="t" x="1005" y="395" text-anchor="middle">OSV.dev</text>
+  <text class="s" x="1005" y="414" text-anchor="middle">live advisories · :443</text>
+  <path class="edge" d="M545,362 L928,400"/>
+  <text class="s" x="800" y="376" text-anchor="middle">only internet egress in the mesh</text>
+
+  <!-- legend -->
+  <text class="s" x="930" y="70">Every boundary:</text>
+  <text class="s" x="930" y="88">• Pydantic, extra=forbid</text>
+  <text class="s" x="930" y="106">• deny-by-default policy</text>
+  <text class="s" x="930" y="124">• audience-scoped JWT</text>
+  <text class="s" x="930" y="142">• one OpenTelemetry trace</text>
+  <text class="s" x="930" y="170">12/12 red-team attacks</text>
+  <text class="s" x="930" y="188">fail closed in CI</text>
+</svg>

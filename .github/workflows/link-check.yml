@@ -1,0 +1,41 @@
+# portfolio-sentinel: the site's own claims get checked like everything else.
+# Weekly (and on every push) every link on the site is verified; a failure
+# opens/updates a GitHub issue so dead links never sit live unnoticed again.
+name: link-check
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,204,206,301,302,303,307,308,403,429
+            --exclude "linkedin\.com"
+            --exclude "mailto:"
+            "./**/*.html"
+          fail: false
+      - name: Open or update an issue on broken links
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Broken links detected on aiml-solutions.com"
+          content-filepath: ./lychee/out.md
+          labels: portfolio-sentinel
+      - name: Fail the run if links are broken
+        if: steps.lychee.outputs.exit_code != 0
+        run: exit 1
