@@ -290,7 +290,7 @@
       (async () => {
         const list = document.getElementById("live-list");
         try {
-          const res = await fetch("https://raw.githubusercontent.com/AIML-Solutions/IntelliClaw/main/public/latest.json", { cache: "no-store" });
+          const res = await fetch("https://raw.githubusercontent.com/AIML-Solutions/IntelliClaw/master/public/latest.json", { cache: "no-store" });
           if (!res.ok) throw new Error(res.status);
           const d = await res.json();
           document.getElementById("live-signals").textContent = d.cycle.signals;
