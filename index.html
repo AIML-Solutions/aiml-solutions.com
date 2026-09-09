@@ -144,6 +144,7 @@
           <a href="#proof">Proof</a>
           <a href="#evaluation">Credibility</a>
           <a href="#projects">Projects</a>
+          <a href="resume.html">Resume</a>
           <a href="#credentials">Contact</a>
         </div>
       </nav>
@@ -190,12 +191,12 @@
       <section class="section" id="proof">
         <div class="section-head"><h2>Credibility And Current Proof</h2></div>
         <div class="grid-4">
+          <div class="metric"><b>12/12</b><span>triage-mesh red-team attack scenarios blocked — the suite must fail closed for CI to pass, on every push</span></div>
+          <div class="metric"><b>13/13</b><span>Kubernetes conformance checks passing: Calico-enforced NetworkPolicies plus a full pipeline run on live advisory data</span></div>
           <div class="metric"><b>16</b><span>MultiClaw Harness synthetic trajectory, agentic-security, and trustworthy-AI cases passing locally</span></div>
           <div class="metric"><b>17</b><span>RecallOps tests passing across retrieval, API, evaluation, and smoke paths</span></div>
-          <div class="metric"><b>7</b><span>AssureOps validation/reporting tests passing for claims and evidence checks</span></div>
-          <div class="metric"><b>7</b><span>AI harness artifact templates in AgentTools</span></div>
         </div>
-        <div class="cta"><a class="btn" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer">MultiClaw Harness</a><a class="btn" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer">RecallOps Retrieval</a><a class="btn" href="https://github.com/AIML-Solutions/assureops" target="_blank" rel="noreferrer">AssureOps Assurance</a><a class="btn" href="https://github.com/AIML-Solutions/AgentTools/tree/main/skills/harness-audit" target="_blank" rel="noreferrer">Harness Audit CLI</a></div>
+        <div class="cta"><a class="btn primary" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer">triage-mesh Flagship</a><a class="btn" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer">MultiClaw Harness</a><a class="btn" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer">RecallOps Retrieval</a><a class="btn" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">All Public Repos</a></div>
       </section>
 
       <section class="section" id="build">
@@ -203,7 +204,7 @@
         <div class="grid-4">
           <article class="card"><span class="pill">Flagship</span><h3>Agent Regression Harnesses</h3><p>Record/replay traces, tool-call assertions, trajectory diffs, cost/latency budgets, and CI gates for agent behavior drift.</p></article>
           <article class="card"><span class="pill">Retrieval</span><h3>RAG Quality Benchmarks</h3><p>Domain-specific measurement rigs for citation grounding, context precision/recall, faithfulness, and abstention behavior.</p></article>
-          <article class="card"><span class="pill">Security</span><h3>Agentic Safety Suites</h3><p>MCP/tool-use authorization checks, prompt-injection fixtures, sandbox-boundary tests, and forbidden-action assertions.</p></article>
+          <article class="card"><span class="pill">Security</span><h3>Agentic Safety Suites</h3><p>MCP/tool-use authorization checks, prompt-injection fixtures, sandbox-boundary tests, and forbidden-action assertions. Reference implementation: <a href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer" style="color:var(--accent)">triage-mesh</a>.</p></article>
           <article class="card"><span class="pill">Runtime</span><h3>Managed Agent Workspaces</h3><p>VPS, local, or hybrid OpenClaw/OpenCode-style environments with scoped workspaces, recovery paths, and handoff docs.</p></article>
         </div>
       </section>
@@ -230,23 +231,22 @@
       <section class="section" id="projects">
         <div class="section-head"><h2>Open Proof Projects</h2></div>
         <div class="grid-3">
+          <a class="repo" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer"><strong>triage-mesh — Flagship</strong><small>Security-first multi-agent vulnerability triage over MCP + A2A: deny-by-default policy engine, trust-labeled untrusted text, service JWTs, a 12-scenario red-team suite in CI, and Kubernetes NetworkPolicies generated from the same policy the harness enforces.</small></a>
           <a class="repo" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer"><strong>MultiClaw Harness</strong><small>Agent trajectory regression harness with tool-call assertions, budget checks, scorecards, CI gate pattern, and synthetic security/trustworthy-AI packs.</small></a>
-          <a class="repo" href="https://github.com/AIML-Solutions/MultiClaw" target="_blank" rel="noreferrer"><strong>MultiClaw</strong><small>MultiClaw OS operating model, quality gates, harness architecture, and cross-repo discipline.</small></a>
-          <a class="repo" href="https://github.com/AIML-Solutions/AgentTools/tree/main/skills/harness-audit" target="_blank" rel="noreferrer"><strong>AgentTools</strong><small>Harness artifacts, CLI verification tools, repo-health checks, schemas, and runnable harness-audit output.</small></a>
           <a class="repo" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer"><strong>RecallOps</strong><small>Metadata-aware retrieval and RAG reference service with verified local path and clear extension points.</small></a>
-          <a class="repo" href="https://github.com/AIML-Solutions/assureops" target="_blank" rel="noreferrer"><strong>AssureOps</strong><small>Assurance-case and runtime-assurance review toolkit for claims, evidence, risks, and review discipline.</small></a>
-          <a class="repo" href="https://github.com/AIML-Solutions/QuantTools/blob/main/docs/PROJECT-METRICS.md" target="_blank" rel="noreferrer"><strong>QuantTools</strong><small>Validation-first market-data and backtesting-ops testbed for source readiness, freshness, provenance, and AI/data workflows.</small></a>
-          <a class="repo" href="https://github.com/AIML-Solutions/CloudInfra/blob/master/scripts/validate.sh" target="_blank" rel="noreferrer"><strong>CloudInfra</strong><small>Local-first Terraform, Kubernetes, VPS, and cloud-runtime validation patterns without committed secrets.</small></a>
+          <a class="repo" href="https://github.com/AIML-Solutions/IntelliClaw" target="_blank" rel="noreferrer"><strong>IntelliClaw</strong><small>Configurable multi-topic news and event intelligence pipeline with scoring, cross-checking, and dispatch.</small></a>
+          <a class="repo" href="https://github.com/AIML-Solutions/OpenClawTools" target="_blank" rel="noreferrer"><strong>OpenClawTools</strong><small>OpenClaw operations tooling: agent automation patterns and deployment support utilities.</small></a>
+          <a class="repo" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer"><strong>All Public Work</strong><small>The full public profile: pinned flagship, supporting repos, and the project-led story in one place.</small></a>
         </div>
       </section>
 
       <section class="section" id="credentials">
         <div class="section-head"><h2>Operator</h2></div>
         <div class="grid-2">
-          <article class="card"><h3>Dennis Tien Donaghy</h3><p>Agentic AI solutions engineer and technical reviewer based in Reno, NV. Operates hardened VPS-hosted OpenClaw/OpenCode-style multi-agent runtimes, contributes to Snorkel AI evaluation workflows, and brings 15+ years of regulated data engineering experience.</p><ul><li>Packt technical reviewer: <em>OpenClaw AI in Production</em></li><li>Snorkel AI evaluation contributor</li><li>Agentic AI Protocols: MCP, A2A, ACP</li><li>Introduction to OpenClaw</li><li>CKAD Unit 1</li><li>UT Austin AI/ML for Business Applications</li></ul></article>
+          <article class="card"><h3>Dennis Tien Donaghy</h3><p>Agentic AI solutions engineer and technical reviewer based in Reno, NV. Operates hardened VPS-hosted OpenClaw/OpenCode-style multi-agent runtimes, contributes to Snorkel AI evaluation workflows, and brings 15+ years of regulated data engineering experience.</p><ul><li>Packt technical reviewer: <em>OpenClaw AI in Production</em></li><li>Snorkel AI evaluation contributor</li><li>Agentic AI Protocols: MCP, A2A, ACP</li><li>Open-source flagship: triage-mesh (MCP + A2A, red-team CI)</li><li>Kubernetes: KCNA/CKAD certification track (in progress)</li><li>UT Austin AI/ML for Business Applications</li></ul></article>
           <article class="card"><h3>Engagement Process</h3><div class="process"><div class="step">Scope call and runtime/workflow inventory</div><div class="step">Fixed deliverables and evidence targets</div><div class="step">Implementation, audit, or evaluation review</div><div class="step">Handoff docs and optional monthly support</div></div></article>
         </div>
-        <div class="cta"><a class="btn primary" href="mailto:dennis.donaghy@aiml-solutions.com?subject=AIML%20Solutions%20project%20inquiry">Start a Project</a><a class="btn" href="https://linkedin.com/in/dtdonaghy" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">GitHub</a></div>
+        <div class="cta"><a class="btn primary" href="mailto:dennis.donaghy@aiml-solutions.com?subject=AIML%20Solutions%20project%20inquiry">Start a Project</a><a class="btn" href="resume.html">Resume</a><a class="btn" href="https://linkedin.com/in/dtdonaghy" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn" href="https://github.com/AIML-Solutions" target="_blank" rel="noreferrer">GitHub</a></div>
       </section>
 
       <footer>© <span id="year"></span> AIML Solutions · MultiClaw OS · Public-safe proof artifacts and professional services</footer>
