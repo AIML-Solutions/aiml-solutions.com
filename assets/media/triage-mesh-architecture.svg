@@ -103,6 +103,6 @@
   <text class="s" x="930" y="106">• deny-by-default policy</text>
   <text class="s" x="930" y="124">• audience-scoped JWT</text>
   <text class="s" x="930" y="142">• one OpenTelemetry trace</text>
-  <text class="s" x="930" y="170">12/12 red-team attacks</text>
+  <text class="s" x="930" y="170">13/13 red-team attacks</text>
   <text class="s" x="930" y="188">fail closed in CI</text>
 </svg>

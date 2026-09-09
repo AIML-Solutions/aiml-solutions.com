@@ -199,7 +199,7 @@
       <section class="section" id="proof">
         <div class="section-head"><h2>Credibility And Current Proof</h2></div>
         <div class="grid-4">
-          <a class="metric" href="https://github.com/AIML-Solutions/triage-mesh/blob/master/tests/redteam/test_attacks.py" target="_blank" rel="noreferrer"><b>12/12</b><span>triage-mesh red-team attack scenarios blocked — the suite must fail closed for CI to pass, on every push. Click to read the attacks.</span></a>
+          <a class="metric" href="https://github.com/AIML-Solutions/triage-mesh/blob/master/tests/redteam/test_attacks.py" target="_blank" rel="noreferrer"><b>13/13</b><span>triage-mesh red-team attack scenarios blocked — the suite must fail closed for CI to pass, on every push. Click to read the attacks.</span></a>
           <a class="metric" href="https://github.com/AIML-Solutions/triage-mesh/blob/master/scripts/cluster-conformance.sh" target="_blank" rel="noreferrer"><b>13/13</b><span>Kubernetes conformance checks: Calico-enforced NetworkPolicies plus a full pipeline run on live advisory data. Click for the script.</span></a>
           <a class="metric" href="https://github.com/AIML-Solutions/multiclaw-harness/tree/main/tests" target="_blank" rel="noreferrer"><b>16</b><span>MultiClaw Harness synthetic trajectory, agentic-security, and trustworthy-AI cases passing. Click for the tests.</span></a>
           <a class="metric" href="https://github.com/AIML-Solutions/recallops/tree/main/tests" target="_blank" rel="noreferrer"><b>17</b><span>RecallOps tests across retrieval, API, evaluation, and smoke paths. Click for the tests.</span></a>
@@ -219,6 +219,18 @@
           <img src="assets/media/triage-mesh-architecture.svg" alt="triage-mesh architecture diagram: orchestrator, three A2A agents, three MCP servers, human gate, OSV egress, and the network-policy boundary" />
           <figcaption class="figcap"><b>The boundary rule, drawn.</b> A2A between orchestrator and agents; MCP from each agent to exactly one tool server; a single internet egress; the same policy file driving the harness, the compose networks, and the generated Kubernetes NetworkPolicies.</figcaption>
         </figure>
+      </section>
+
+      <section class="section" id="live">
+        <div class="section-head"><h2>Live Runtime</h2><a class="btn" href="https://github.com/AIML-Solutions/IntelliClaw" target="_blank" rel="noreferrer">IntelliClaw</a></div>
+        <p>Not a screenshot: this card is rendered from the latest cycle of IntelliClaw, an autonomous public-source signals pipeline that runs on a schedule with no API keys and no model spend. Harvest, normalize, cross-check, score, publish — the "operate the runtime" claim, observable.</p>
+        <div class="grid-4" id="live-metrics">
+          <div class="metric"><b id="live-signals">—</b><span>signals processed in the latest cycle</span></div>
+          <div class="metric"><b id="live-high">—</b><span>scored high-risk by keyword and source-class confidence</span></div>
+          <div class="metric"><b id="live-sources">—</b><span>public sources harvested</span></div>
+          <div class="metric"><b id="live-when">—</b><span id="live-when-label">last cycle (UTC)</span></div>
+        </div>
+        <div class="card" style="margin-top:12px"><span class="pill">Top high-risk signals</span><ul id="live-list" style="margin:6px 0 0;padding-left:18px;color:var(--soft);line-height:1.5"><li>Loading the latest cycle…</li></ul></div>
       </section>
 
       <section class="section" id="build">
@@ -253,7 +265,7 @@
       <section class="section" id="projects">
         <div class="section-head"><h2>Open Proof Projects</h2></div>
         <div class="grid-3">
-          <a class="repo" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer"><strong>triage-mesh — Flagship</strong><small>Security-first multi-agent vulnerability triage over MCP + A2A: deny-by-default policy engine, trust-labeled untrusted text, service JWTs, a 12-scenario red-team suite in CI, and Kubernetes NetworkPolicies generated from the same policy the harness enforces.</small></a>
+          <a class="repo" href="https://github.com/AIML-Solutions/triage-mesh" target="_blank" rel="noreferrer"><strong>triage-mesh — Flagship</strong><small>Security-first multi-agent vulnerability triage over MCP + A2A: deny-by-default policy engine, trust-labeled untrusted text, service JWTs, a 13-scenario red-team suite in CI, and Kubernetes NetworkPolicies generated from the same policy the harness enforces.</small></a>
           <a class="repo" href="https://github.com/AIML-Solutions/multiclaw-harness" target="_blank" rel="noreferrer"><strong>MultiClaw Harness</strong><small>Agent trajectory regression harness with tool-call assertions, budget checks, scorecards, CI gate pattern, and synthetic security/trustworthy-AI packs.</small></a>
           <a class="repo" href="https://github.com/AIML-Solutions/recallops" target="_blank" rel="noreferrer"><strong>RecallOps</strong><small>Metadata-aware retrieval and RAG reference service with verified local path and clear extension points.</small></a>
           <a class="repo" href="https://github.com/AIML-Solutions/IntelliClaw" target="_blank" rel="noreferrer"><strong>IntelliClaw</strong><small>Configurable multi-topic news and event intelligence pipeline with scoring, cross-checking, and dispatch.</small></a>
@@ -273,6 +285,33 @@
 
       <footer>© <span id="year"></span> AIML Solutions · MultiClaw OS · Public-safe proof artifacts and professional services</footer>
     </div>
-    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      (async () => {
+        const list = document.getElementById("live-list");
+        try {
+          const res = await fetch("https://raw.githubusercontent.com/AIML-Solutions/IntelliClaw/main/public/latest.json", { cache: "no-store" });
+          if (!res.ok) throw new Error(res.status);
+          const d = await res.json();
+          document.getElementById("live-signals").textContent = d.cycle.signals;
+          document.getElementById("live-high").textContent = d.cycle.high;
+          document.getElementById("live-sources").textContent = d.cycle.sources.length;
+          document.getElementById("live-when").textContent = (d.generated_at || "").replace("T", " ").replace("Z", "").slice(5, 16);
+          list.innerHTML = "";
+          for (const s of (d.top_high || []).slice(0, 6)) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = s.link || "#"; a.target = "_blank"; a.rel = "noreferrer"; a.style.color = "var(--accent)";
+            a.textContent = s.text.length > 140 ? s.text.slice(0, 140) + "…" : s.text;
+            li.appendChild(a);
+            li.append(" — " + s.source);
+            list.appendChild(li);
+          }
+          if (!list.children.length) list.innerHTML = "<li>No high-risk signals in the latest cycle.</li>";
+        } catch (e) {
+          list.innerHTML = "<li>Latest cycle not available right now — the pipeline publishes every six hours.</li>";
+        }
+      })();
+    </script>
   </body>
 </html>
